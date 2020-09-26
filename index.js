@@ -1,3 +1,5 @@
+const generateReadme = require('./src/readme-template');
+const writeFile = require('./utils/generateMarkdown');
 const inquirer = require('inquirer');
 
 // array of questions for user
@@ -122,7 +124,10 @@ function writeToFile(fileName, data) {}
 
 // function to initialize program
 function init() {
-    promptUser();
+    promptUser()
+        .then(questions => {
+            return (console.log(generateReadme(questions)));
+        })
 }
 
 // function call to initialize program
