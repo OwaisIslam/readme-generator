@@ -120,15 +120,35 @@ const promptUser = () => {
 }
 
 // function to write README file
-function writeToFile(fileName, data) {
-
+function writeToFile(data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/README.md', data, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve({
+                ok: true,
+                message: 'Readme file created!'
+            })
+        })
+    })
 }
 
 // function to initialize program
 function init() {
     promptUser()
         .then(questions => {
-            return (console.log(generateReadme(questions)));
+            return generateReadme(questions);
+        })
+        .then(formattedPage => {
+            return writeToFile(formattedPage);
+        })
+        .then(writeFileResponse => {
+            console.log(writeFileResponse);
+        })
+        .catch(err => {
+            console.log(err);
         })
 }
 
