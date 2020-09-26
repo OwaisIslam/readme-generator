@@ -83,7 +83,7 @@ const questions = [{
         type: 'list',
         name: 'badge',
         message: 'Please select a license:',
-        choices: ['Apache', 'MIT License', 'GNU GPLv3']
+        choices: ['Apache License 2.0', 'MIT License', 'GNU GPLv3']
     },
     {
         type: 'input',
