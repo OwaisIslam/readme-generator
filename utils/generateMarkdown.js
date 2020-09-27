@@ -1,3 +1,4 @@
+// this checks to see what license was selected and adds the appropriate badge
 const addBadge = licenseChoice => {
   if (licenseChoice == 'Apache License 2.0') {
     return `
@@ -18,6 +19,7 @@ const addBadge = licenseChoice => {
   }
 }
 
+// this checks to see what license was selected and updates the License section accordingly
 const checkLicense = licenseChoice => {
   if (licenseChoice == 'Apache License 2.0') {
     return `
