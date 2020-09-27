@@ -83,9 +83,9 @@ const questions = [{
     },
     {
         type: 'list',
-        name: 'badge',
+        name: 'license',
         message: 'Please select a license:',
-        choices: ['Apache License 2.0', 'MIT License', 'GNU GPLv3']
+        choices: ['Apache License 2.0', 'GNU GPLv3', 'MIT License']
     },
     {
         type: 'input',
