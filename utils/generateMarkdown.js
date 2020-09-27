@@ -16,11 +16,17 @@ const addBadge = licenseChoice => {
 
 const checkLicense = licenseChoice => {
   if (licenseChoice == 'Apache License 2.0') {
-    console.log("Apache");
+    return `
+This application is covered by the Apache v2.0 License, the terms of which can be found [here](https://www.apache.org/licenses/LICENSE-2.0.txt).
+    `;
   } else if (licenseChoice == 'GNU GPLv3') {
-    console.log("GNU");
+    return `
+This application is covered by the GNU General Purpose License, the terms of which can be found [here](https://www.gnu.org/licenses/gpl-3.0.en.html).
+    `;
   } else {
-    console.log('MIT License');
+    return `
+This application is covered by the MIT License, the terms of which can be found [here](https://opensource.org/licenses/MIT).
+    `;
   }
 }
 
