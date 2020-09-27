@@ -7,6 +7,10 @@ const addBadge = licenseChoice => {
     return `
 ![gnu](https://img.shields.io/badge/license-GNU%20GPLv3-green)
     `;
+  } else if (licenseChoice == 'ISC License') {
+    return `
+![isc](https://img.shields.io/badge/license-ISC%20License-purple)
+    `;
   } else {
     return `
 ![mit](https://img.shields.io/badge/license-MIT%20License-red)
@@ -22,6 +26,10 @@ This application is covered by the Apache v2.0 License, the terms of which can b
   } else if (licenseChoice == 'GNU GPLv3') {
     return `
 This application is covered by the GNU General Purpose License, the terms of which can be found [here](https://www.gnu.org/licenses/gpl-3.0.en.html).
+    `;
+  } else if (licenseChoice == 'ISC License') {
+    return `
+This application is covered by the ISC License, the terms of which can be found [here](https://opensource.org/licenses/ISC).
     `;
   } else {
     return `
@@ -40,19 +48,24 @@ ${data.description}
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
+* [License](#license)
 * [Contributing](#contributing)
 * [Tests](#tests)
-* [License](#license)
+* [Questions](#questions)
 ## Installation
 ${data.installation}
 ## Usage
 ${data.usage}
+## License
+${checkLicense(data.license)}
 ## Contributing
 ${data.contribution}
 ## Tests
 ${data.test}
-## License
-${checkLicense(data.license)}
+## Questions
+[GitHub Profile](https://github.com/${data.userName}/)  
+
+I can be reached at ${data.email}.
 `;
 }
 
